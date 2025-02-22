@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navbar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="bg-gray-100">
+    <nav class="bg-white p-4 shadow-md">
+      <div
+        class="container mx-auto flex justify-between items-center"
+        x-data="{ isOpen: false }"
+      >
+        <a href="./index.html">
+          <img
+            class="size-10 rounded-full"
+            src="./images/IMG-ME.jpg"
+            alt="Your Company"
+          />
+        </a>
+
+        <a
+          href="./images/New_CV_Latex.pdf"
+          download
+          class="text-xl bg-green-300 py-2 px-3 rounded font-bold text-gray-800"
+        >
+          <i class="fas fa-download"></i>
+          <span class="text-gray-700">CV</span>
+        </a>
+
+        <div class="md:hidden">
+          <button
+            @click="isOpen = !isOpen"
+            type="button"
+            class="text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <div class="hidden md:flex space-x-6">
+          <a
+            href="./publication.html"
+            class="text-gray-700 font-bold hover:text-blue-900"
+            >Publications</a
+          >
+          <a
+            href="./talks.html"
+            class="text-gray-700 font-bold hover:text-blue-900"
+            >Talks</a
+          >
+          <a
+            href="./teachings.html"
+            class="text-gray-700 font-bold hover:text-blue-900"
+            >Teaching</a
+          >
+          <a
+            href="./portfolio.html"
+            class="text-gray-700 font-bold hover:text-blue-900"
+            >Portfolio</a
+          >
+          <a
+            href="./blog-post.html"
+            class="text-gray-700 font-bold hover:text-blue-900"
+            >Blog Post</a
+          >
+        </div>
+
+        <div
+          class="md:hidden absolute top-16 right-4 w-48 bg-white rounded-md shadow-lg"
+          x-show="isOpen"
+          x-transition:enter="transition ease-out duration-300 transform"
+          x-transition:enter-start="opacity-0 scale-95"
+          x-transition:enter-end="opacity-100 scale-100"
+          x-transition:leave="transition ease-in duration-200 transform"
+          x-transition:leave-start="opacity-100 scale-100"
+          x-transition:leave-end="opacity-0 scale-95"
+        >
+          <div class="py-2">
+            <a
+              href="./publication.html"
+              class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+              >Publications</a
+            >
+            <a
+              href="./talks.html"
+              class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+              >Talks</a
+            >
+            <a
+              href="./teachings.html"
+              class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+              >Teaching</a
+            >
+            <a
+              href="./portfolio.html"
+              class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+              >Porfolio</a
+            >
+            <a
+              href="./blog-post.html"
+              class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+              >Blog Post</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <header class="bg-blue-950 shadow-sm">
+      <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <h1
+          class="text-3xl font-bold tracking-tight text-white"
+          style="
+            font-family: 'Monomakh', serif;
+            font-weight: 400;
+            font-style: normal;
+          "
+        >
+          YUSUF OLATUNJI TIJANI
+        </h1>
+      </div>
+    </header>
+
+    <h2 class="text-3xl text-center mt-9 font-bold text-blue-950">
+      PUBLICATIONS
+    </h2>
+
+    <div class="lg:w-7/10 w-full lg:pl-3 pr-3">
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:Y0pCki6q_DkC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          A comparative study of three dimensional flow of Casson–Williamson
+          nanofluids past a riga plate: Spectral quasi-linearization approach
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          MT Akolade, Y.O. Tijani || CITED by 72 || 2021
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          Partial differential equations in applied mathematics 4, 100108
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:9yKSN-GCB0IC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          Dynamical analysis of hydromagnetic Brownian and thermophoresis
+          effects of squeezing Eyring–Powell nanofluid flow with variable
+          thermal conductivity and chemical reaction
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          HA Ogunseye, SO Salawu, YO Tijani, M Riliwan, P Sibanda || CITED by 52
+          || 2019
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          Multidiscipline Modeling in Materials and Structures 15 (6), 1100-1120
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:ufrVoPGSRksC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          On the mathematical model of Eyring–Powell nanofluid flow with
+          non-linear radiation, variable thermal conductivity and viscosity
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          MO Lawal, KB Kasali, HA Ogunseye, MO Oni, YO Tijani, YT Lawal || CITED
+          by 37 || 2022
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          Partial differential equations in applied mathematics 5, 100318
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:2osOgNQ5qMEC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          Comparative study of some numerical methods for the Burgers–Huxley
+          equation
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          AR Appadu, B Inan, Y.O. Tijani || CITED by 33 || 2019
+        </p>
+        <p class="text-gray-800 leading-relaxed">Symmetry 11 (11), 1333</p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:IjCSPb-OGe4C"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          Comparison of some forecasting methods for COVID-19
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          AR Appadu, AS Kelil, YO Tijani || CITED by 23 || 2021
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          Alexandria Engineering Journal 60 (1), 1565-1589
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:qjMakFHDy7sC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          Entropy generation in an unsteady Eyring‐Powell hybrid nanofluid flow
+          over a permeable surface: A Lie group analysis
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          HA Ogunseye, YO Tijani, P Sibanda || CITED by 23 || 2020
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          Heat Transfer 49 (6), 3374-3390
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:UebtZRa9Y70C"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          MHD Powell–Eyring nanofluid motion with convective surface condition
+          and Dufour–Soret impact past a vertical plate: Lie group analysis
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          HA Ogunseye, SO Salawu, SD Oloniiju, MT Akolade, YO Tijani, || CITED
+          by 20 || 2022
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          Partial differential equations in applied mathematics 6, 100459
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:roLk4NBRz8UC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          Nonsimilar solution of a boundary layer flow of a Reiner–Philippoff
+          fluid with nonlinear thermal convection
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          YO Tijani, SD Oloniiju, KB Kasali, MT Akolade || CITED by 20 || 2022
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          Heat Transfer 51 (6), 5659-5678
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:UeHWp8X0CEIC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          Soret, Dufour and radiation effects of a viscoelastic fluid on an
+          exponentially stretching surface using the Catteneo–Christov heat flux
+          model
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          KB Kasali, YO Tijani, MO Lawal, YT Lawal || CITED by 16 || 2020
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          Multidiscipline Modeling in Materials and Structures 16 (6), 1577-1594
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:LkGwnXOMwfcC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          Unconditionally positive NSFD and classical finite difference schemes
+          for biofilm formation on medical implant using Allen-Cahn equation
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          YO Tijani, AR Appadu || CITED by 12 || 2022
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          Demonstratio Mathematica 55 (1), 40-60
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:YsMSGLbcyi4C"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          1D generalised Burgers-Huxley: proposed solutions revisited and
+          numerical solution using FTCS and NSFD methods
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          AR Appadu, YO Tijani || CITED by 11 || 2022
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          Frontiers in Applied Mathematics and Statistics 7, 773733
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:ULOm3_A8WrAC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          Bioconvection in Eyring–Powell fluid with composite features of
+          variable viscosity and motile microorganism density
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          MT Akolade, JO Olabode, YO Tijani, T Akhtar || CITED by 10 || 2023
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          The European Physical Journal Plus 138 (8), 1-16
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:4TOpqqG69KYC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          Transport features on bidirectional nanofluid flow with convective
+          heating and variable darcy regime
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          YO Tijani, MT Akolade, AR Mohd Kasim || CITED by 9 || 2023
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          Journal of Computational and Theoretical Transport 52 (5), 343-362
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:W7OEmFMy1HYC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          Some finite difference methods to model biofilm growth and decay:
+          classical and non-standard
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          YO Tijani, AR Appadu, AA Aderogba || CITED by 9 || 2021
+        </p>
+        <p class="text-gray-800 leading-relaxed">Computation 9 (11), 123</p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:0EnyYjriUFMC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          On the generalized Fick’s and Fourier’s laws for an unsteady
+          Casson-Williamson fluids over a stretching surface: A spectral
+          approach
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          YO Tijani, MT Akolade, HA Ogunseye, AT Adeosun, O Farotimi || CITED by
+          8 || 2023
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          Journal of Nanofluids 12 (1), 91-103
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:eQOLeE2rZwMC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          On the performance of some NSFD methods for a 2-D generalized
+          Burgers–Huxley equation
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          A Rao Appadu, Y Olatunji Tijani, A Abiodun Aderogba || CITED by 8 ||
+          2021
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          Journal of Difference Equations and Applications 27 (11), 1537-1573
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:3fE2CSJIrl8C"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          Magnetic dipole dynamics on Reiner–Philippoff boundary layer flow
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          YO Tijani, AT Adeosun, HA Ogunseye, H Niranjan || CITED by 7 || 2024
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          Numerical Heat Transfer, Part A: Applications 85 (10), 1691-1705
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:Wp0gIr-vW9MC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          Dynamics of accelerating and decelerating flows: A boundary layer
+          examination with non-similar approach and convective boundary
+          condition
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          MT Akolade, G Samaila, MO Oni, A Yusuf, PB Malgwi, TS Yusuf, YO Tijani
+          || CITED by 7 || 2024
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          International Journal of Non-Linear Mechanics 161, 104675
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:YOwf2qJgpHMC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          Dynamics of carbon nanotubes on Reiner–Philippoff fluid flow over a
+          stretchable Riga plate
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          YO Tijani, MT Akolade, KB Kasali, HA Ogunseye || CITED by 7 || 2024
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          Indian Journal of Physics 98 (3), 1007-1019
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:qxL8FJ1GzNcC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          Surface dynamics on Jeffrey nanofluid flow with Coriolis effect and
+          variable Darcy regime
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          YO Tijani, MT Akolade, O Otegbeye, A Yusuf || CITED by 7 || 2024
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          ZAMM‐Journal of Applied Mathematics and Mechanics/Zeitschrift für
+          Angewandte ...
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:aqlVkmm33-oC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          Bioconvection analysis of EMHD and dissipative Williamson nanofluid
+          over a three dimensional Riga plate with Joule heating effect
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          MT Akolade, T Akhtar, MM Awad, YO Tijani, AT Adeosun || CITED by 5 ||
+          2023
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          International Journal of Modelling and Simulation, 1-13
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:Tyk-4Ss8FVUC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          Computational study of some numerical methods for the generalized
+          Burgers-Huxley equation
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          AR Appadu, YO Tijani, J Munyakazi || CITED by 5 || 2024
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          international Conference on Computational Sciences-Modelling,
+          Computing and...
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:4DMP91E08xMC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          Magnetic feature and regression analysis of Reiner-Philippoff boundary
+          layer flow
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          YO Tijani, SD Oloniiju, O Otegbeye, AR Babalola || CITED by 4 || 2023
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          Numerical Heat Transfer, Part B: Fundamentals, 1-19
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:zYLM7Y9cAGgC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          Comparison of some numerical methods for the Burgers-Huxley equation
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          AR Appadu, B İnan, TY Olatunji || CITED by 4 || 2020
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          AIP Conference Proceedings 2293 (1)
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:_kc_bZDykSQC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          Surface dynamics and thermophysical mechanics on Reiner–Philippoff
+          fluid flow
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          YO Tijani, SD Oloniiju, MO Oni, MT Akolade || CITED by 3 || 2024
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          International Journal of Modern Physics B 38 (25), 2450339
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:dhFuZR0502QC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          Thermal analysis of extended surfaces using deep neural networks
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          SD Oloniiju, YO Tijani, O Otegbeye || CITED by 3 || 2024
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          Open Physics 22 (1), 20240051
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:mVmsd5A6BfQC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          Exploration of recent developments of hybrid nanofluids
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          NS Nordin, ARM Kasim, I Waini, YO Tijani, S Shafie, NS Khashi’ie, ...
+          || CITED by 3 || 2024
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          Journal of Advanced Research in Fluid Mechanics and Thermal Sciences
+          114 …
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:5nxA0vEk-isC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          Thermal and multi-boiling analysis of a rectangular porous fin: A
+          spectral approach
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          KB Kasali, SO Akindeinde, YO Tijani, AO Adewumi, RS Lebelo || CITED by
+          3 || 2024
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          Nonlinear Engineering 11 (1), 654-663
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:ZeXyd9-uunAC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          Nonlinear Mixed Convective Analysis of Thomson and Troian Slip Flow
+          Conditions for Ag–Cu–TiO2/H2O Hybrid Nanofluid Over a Riga Plate
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          A Yusuf, MT Akolade, YO Tijani || CITED by 2 || 2024
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          Journal of Computational and Theoretical Transport 53 (7), 553-574
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:M3ejUd6NZC8C"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          Radiative Jeffrey fluid transport over a stretching surface with
+          anomalous heat and mass flux
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          KB Kasali, YO Tijani, SO Ajadi, A Yusuf || CITED by 1 || 2024
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          International Journal of Modern Physics B 38 (26), 2450350
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:Zph67rFs4hoC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          Simulation of the laminar thermal boundary layer problem over a flat
+          plate by exploring the local non-similarity technique
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          MO Lawal, YO Tijani, SO Ajadi, KB Kasali || CITED by 1 || 2023
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          International Journal of Modelling and Simulation, 1-12
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:KlAtU1dfN6UC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          THERMAL CRITICALITY OF ELECTROMAGNETOHYDRODYNAMIC REACTIVE SQUEEZED
+          CASSON MATERIAL IN A COMBUSTIBLE CHANNEL: A SPECTRAL APPROACH
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          EO Titiloye, AT Adeosun, MT Akolade, YO Tijani, JO Olabode || CITED by
+          1 || 2023
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          Computational Thermal Sciences: An International Journal 15 (4)
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:TQgYirikUcIC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          Entropy generation in Casson-Williamson-Powell-Eyring hybrid
+          ferrofluid flow in a microchannel: Adomian decomposition and deep
+          neural networks approaches
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          HA Ogunseye, YO Tijani, SD Oloniiju, O Otegbeye, TM Agbaje || 2025
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          Colloid and Polymer Science, 1-18
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:mB3voiENLucC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          Theory of conjugate mixed convection flow of hybridized ethylene
+          glycol based nanoparticles with Joule heating
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          MO Oni, MT Akolade, G Samaila, TS Yusuf, YO Tijani, A Yusuf, PB Malgwi
+          || CITED by 7 || 2024
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          Journal of Thermal Analysis and Calorimetry, 1-13
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:HDshCWvjkbEC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          Thermal analysis of Eyring-Powell hybrid nanofluid: A case of combined
+          convective transport and radiative heat flux along inclined
+          stretching/shrinking sheet
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          A Aljabali, AR Mohd Kasim, I Waini, NS Khashi’ie, YO Tijani || 2025
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          WSEAS TRANSACTIONS ON HEAT AND MASS TRANSFER 20 (1), 1-13
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:hC7cP41nSMkC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          Bio-filtration of Organic Pollutants: Simulation and Mathematical
+          Modelling of Toluene and n-propanol
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          YO Tijani, SD Oloniiju || 2025
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          Chemistry Africa 8 (1), 357-368
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:hFOr9nPyWt4C"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          Enhancing synthesized engine oil thermal performance through the use
+          of tri-hybrid nanofluids over a bi-directed sheet with Coriolis force
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          MT Akolade, YO Tijani, AT Adeosun, OP Farotimi, O Otegbeye || 2024
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          Proceedings of the Institution of Mechanical Engineers, Part N:
+          Journal of …
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:7PzlFSSx8tAC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          Chebyshev Pseudospectral Method for Fractional Differential Equations
+          in Non-Overlapping Partitioned Domains
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          SD Oloniiju, N Mukwevho, YO Tijani, O Otegbeye || 2024
+        </p>
+        <p class="text-gray-800 leading-relaxed">AppliedMath 4 (3), 950-974</p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:QIV2ME_5wuYC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          The Bibliometric Review on Convective Heat Transfer of Nanofluid
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          F Fauzi, ARM Kasim, I Waini, SFHM Kanafiah, YO Tijani || 2024
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          Journal of Advanced Research in Micro and Nano Engineering 20 (1),
+          17-34
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:_FxGoFyzp5QC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          On the numerical solution of 2D Burgers-Huxley equation using NSFD and
+          classical methods
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          AR Appadu, YO Tijani || 2022
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          American Institute of Physics Conference Series 2425 (1), 020013
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <a
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZD7XicUAAAAJ&pagesize=80&citation_for_view=ZD7XicUAAAAJ:8k81kl-MbHgC"
+          class="text-xl text-blue-700 underline font-bold"
+        >
+          Hydromagnetic radiative ﬂow past a vertical oscillating plate with
+          chemical reaction in presence of heat source
+        </a>
+        <p class="text-gray-400 leading-relaxed">
+          PF Fasogbon, YO Tijani || 2017
+        </p>
+        <p class="text-gray-800 leading-relaxed">
+          Nigerian Journal of Mathematics and Applications 26, 45 - 60
+        </p>
+      </div>
+    </div>
+
+
+    <footer class="bg-green-100 shadow-sm py-4 text-center">
+      <div class="container mx-auto">
+        <p class=" text-xl font-bold text-gray-600 mb-2">Sitemap</p>
+        <div class="flex justify-evenly bm-2">
+            <p class="text-sm font-bold text-gray-600 mr-4">FOLLOW:</p>
+            <a href="https://x.com/olodyusuf" class="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded">
+              <i class="fab fa-twitter text-blue-400 text-lg"></i>
+              <span class="text-gray-700">Twitter</span>
+          </a>
+          <a href="#" class="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded">
+              <i class="fab fa-github text-gray-800 text-lg"></i>
+              <span class="text-gray-700">GitHub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/yusuf-olatunji-tijani-5489b324" class="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded">
+              <i class="fab fa-linkedin-in text-blue-700 text-lg"></i>
+              <span class="text-gray-700">LinkedIn</span>
+          </a>
+        </div>
+        <p class="text-xs text-gray-600">&copy; 2025 Yusuf Olatunji Tijani. All right reserved</p>
+
+      </div>
+    </footer>
+  </body>
+</html>

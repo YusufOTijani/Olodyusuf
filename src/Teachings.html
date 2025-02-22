@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navbar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body class="bg-gray-100">
+    <nav class="bg-white p-4 shadow-md">
+      <div
+        class="container mx-auto flex justify-between items-center"
+        x-data="{ isOpen: false }"
+      >
+        <a href="./index.html">
+          <img
+            class="size-10 rounded-full"
+            src="./images/IMG-ME.jpg"
+            alt="Your Company"
+          />
+        </a>
+        <a
+          href="./images/New_CV_Latex.pdf"
+          download
+          class="text-xl bg-green-300 py-2 px-3 rounded font-bold text-gray-800"
+        >
+          <i class="fas fa-download"></i>
+          <span class="text-gray-700">CV</span>
+        </a>
+
+        <div class="md:hidden">
+          <button
+            @click="isOpen = !isOpen"
+            type="button"
+            class="text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <div class="hidden md:flex space-x-6">
+          <a
+            href="./publication.html"
+            class="text-gray-700 font-bold hover:text-blue-900"
+            >Publications</a
+          >
+          <a
+            href="./talks.html"
+            class="text-gray-700 font-bold hover:text-blue-900"
+            >Talks</a
+          >
+          <a
+            href="./teachings.html"
+            class="text-gray-700 font-bold hover:text-blue-900"
+            >Teaching</a
+          >
+          <a
+            href="./portfolio.html"
+            class="text-gray-700 font-bold hover:text-blue-900"
+            >Portfolio</a
+          >
+          <a
+            href="./blog-post.html"
+            class="text-gray-700 font-bold hover:text-blue-900"
+            >Blog Post</a
+          >
+        </div>
+
+        <div
+          class="md:hidden absolute top-16 right-4 w-48 bg-white rounded-md shadow-lg"
+          x-show="isOpen"
+          x-transition:enter="transition ease-out duration-300 transform"
+          x-transition:enter-start="opacity-0 scale-95"
+          x-transition:enter-end="opacity-100 scale-100"
+          x-transition:leave="transition ease-in duration-200 transform"
+          x-transition:leave-start="opacity-100 scale-100"
+          x-transition:leave-end="opacity-0 scale-95"
+        >
+          <div class="py-2">
+            <a
+              href="./publication.html"
+              class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+              >Publications</a
+            >
+            <a
+              href="./talks.html"
+              class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+              >Talks</a
+            >
+            <a
+              href="./teachings.html"
+              class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+              >Teaching</a
+            >
+            <a
+              href="./portfolio.html"
+              class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+              >Porfolio</a
+            >
+            <a
+              href="./blog-post.html"
+              class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+              >Blog Post</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <header class="bg-blue-950 shadow-sm">
+      <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <h1
+          class="text-3xl font-bold tracking-tight text-white"
+          style="
+            font-family: 'Monomakh', serif;
+            font-weight: 400;
+            font-style: normal;
+          "
+        >
+          YUSUF OLATUNJI TIJANI
+        </h1>
+      </div>
+    </header>
+
+    <h2 class="text-3xl text-center mt-9 font-bold text-blue-950">TEACHING</h2>
+
+    <div class="lg:w-7/10 w-full lg:pl-3 pr-3">
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h3 class="font-bold">Graduate Teaching</h3>
+        <p class="text-gray-400 leading-relaxed">05/2020 - 10/2023</p>
+        <p class="text-gray-800 leading-relaxed">
+          Department of Mathematics and Applied Mathematics, Nelson Mandela
+          University, Gqe-berha, South-Africa.
+        </p>
+      </div>
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h3 class="font-bold">Contract Lecturer</h3>
+        <p class="text-gray-400 leading-relaxed">2021</p>
+        <p class="text-gray-800 leading-relaxed">
+          Department of Mathematics and Applied Mathematics, Nelson Mandela
+          University, Gqe-berha, South-Africa.
+        </p>
+      </div>
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h3 class="font-bold">Mathematics Tutor</h3>
+        <p class="text-gray-400 leading-relaxed">05/2016 - 12/2018</p>
+        <p class="text-gray-800 leading-relaxed">
+          Department of Mathematics, Obafemi Awolowo University, Nigeria.
+        </p>
+      </div>
+    </div>
+    <footer class="bg-green-100 shadow-sm">
+      <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <p class="font-bold tracking-tight text-gray-900">Site map</p>
+      </div>
+    </footer>
+  </body>
+</html>
