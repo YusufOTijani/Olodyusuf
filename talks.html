@@ -3,332 +3,356 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yusuf Presentation</title>
+    <title>Talks & Presentations - Yusuf Olatunji Tijani</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script
-      defer
-      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+    <!-- Custom Tailwind Configuration -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+          }
+        }
+      }
+    </script>
   </head>
-
-  <body class="bg-gray-100">
-    <nav class="bg-white p-4 shadow-md">
-      <div
-        class="container mx-auto flex justify-between items-center"
-        x-data="{ isOpen: false }"
-      >
-        <a href="./index.html">
-          <img
-            class="size-10 rounded-full"
-            src="./IMG-ME.jpg"
-            alt="Your Company"
-          />
-        </a>
-        <a
-          href="./Yusuf04_2025.pdf"
-          download
-          class="text-xl bg-green-300 py-2 px-3 rounded font-bold text-gray-800"
-        >
-          <i class="fas fa-download"></i>
-          <span class="text-gray-700">CV</span>
+  <body class="bg-slate-50 text-slate-800 antialiased selection:bg-indigo-200 selection:text-indigo-900">
+    
+    <!-- Navbar -->
+    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
+      <div class="container mx-auto px-4 py-3 flex justify-between items-center max-w-6xl" x-data="{ isOpen: false }">
+        
+        <!-- Logo/Image -->
+        <a href="./index.html" class="flex items-center gap-3 group">
+          <img class="size-10 rounded-full border-2 border-transparent group-hover:border-indigo-500 transition-all object-cover" src="./IMG-ME.jpg" alt="Yusuf Olatunji Tijani" onerror="this.src='https://ui-avatars.com/api/?name=Yusuf+Tijani&background=4f46e5&color=fff'"/>
+          <span class="font-bold text-slate-800 tracking-tight hidden sm:block group-hover:text-indigo-600 transition-colors">Yusuf O. Tijani</span>
         </a>
 
-        <div class="md:hidden">
-          <button
-            @click="isOpen = !isOpen"
-            type="button"
-            class="text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200"
-          >
-            <svg
-              class="h-6 w-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
-            </svg>
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="./publication.html" class="text-slate-600 font-medium hover:text-indigo-600 transition-colors">Publications</a>
+          <a href="./talks.html" class="text-indigo-600 font-semibold border-b-2 border-indigo-600 pb-1">Talks</a>
+          <a href="./Teachings.html" class="text-slate-600 font-medium hover:text-indigo-600 transition-colors">Teaching</a>
+          <a href="./portfolio.html" class="text-slate-600 font-medium hover:text-indigo-600 transition-colors">Portfolio</a>
+          <a href="./blog-post.html" class="text-slate-600 font-medium hover:text-indigo-600 transition-colors">Blog</a>
+          
+          <!-- Note: Preserved your specific CV name for this page -->
+          <a href="./Yusuf04_2025.pdf" download class="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-medium transition-all shadow-sm hover:shadow">
+            <i class="fas fa-file-download"></i> Download CV
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex items-center gap-4">
+          <a href="./Yusuf04_2025.pdf" download class="text-indigo-600 font-medium text-sm border border-indigo-600 px-3 py-1.5 rounded-md">CV</a>
+          <button @click="isOpen = !isOpen" type="button" class="text-slate-500 hover:text-slate-700 focus:outline-none">
+            <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
           </button>
         </div>
 
-        <div class="hidden md:flex space-x-6">
-          <a
-            href="./publication.html"
-            class="text-gray-700 font-bold hover:text-blue-900"
-            >Publications</a
-          >
-          <a
-            href="./talks.html"
-            class="text-gray-700 font-bold hover:text-blue-900"
-            >Talks</a
-          >
-          <a
-            href="./Teachings.html"
-            class="text-gray-700 font-bold hover:text-blue-900"
-            >Teaching</a
-          >
-          <a
-            href="./portfolio.html"
-            class="text-gray-700 font-bold hover:text-blue-900"
-            >Portfolio</a
-          >
-          <a
-            href="./blog-post.html"
-            class="text-gray-700 font-bold hover:text-blue-900"
-            >Blog Posts</a
-          >
-        </div>
-
-        <div
-          class="md:hidden absolute top-16 right-4 w-48 bg-white rounded-md shadow-lg"
-          x-show="isOpen"
-          x-transition:enter="transition ease-out duration-300 transform"
-          x-transition:enter-start="opacity-0 scale-95"
-          x-transition:enter-end="opacity-100 scale-100"
-          x-transition:leave="transition ease-in duration-200 transform"
-          x-transition:leave-start="opacity-100 scale-100"
-          x-transition:leave-end="opacity-0 scale-95"
-        >
-          <div class="py-2">
-            <a
-              href="./publication.html"
-              class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-              >Publications</a
-            >
-            <a
-              href="./talks.html"
-              class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-              >Talks</a
-            >
-            <a
-              href="./Teachings.html"
-              class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-              >Teaching</a
-            >
-            <a
-              href="./portfolio.html"
-              class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-              >Portfolio</a
-            >
-            <a
-              href="./blog-post.html"
-              class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-              >Blog Posts</a
-            >
+        <!-- Mobile Dropdown -->
+        <div x-show="isOpen" @click.away="isOpen = false" x-transition.opacity class="absolute top-full left-0 right-0 bg-white border-b border-slate-200 shadow-xl md:hidden">
+          <div class="px-4 py-4 space-y-3 flex flex-col">
+            <a href="./publication.html" class="text-slate-600 font-medium">Publications</a>
+            <a href="./talks.html" class="font-semibold text-indigo-600">Talks</a>
+            <a href="./Teachings.html" class="text-slate-600 font-medium">Teaching</a>
+            <a href="./portfolio.html" class="text-slate-600 font-medium">Portfolio</a>
+            <a href="./blog-post.html" class="text-slate-600 font-medium">Blog Posts</a>
           </div>
         </div>
       </div>
     </nav>
 
-<header class="bg-blue-950 shadow-sm">
-  <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-    <a href="./index.html" class="text-3xl font-bold tracking-tight text-white" style="font-family: 'Monomakh', serif; font-weight: 400; font-style: normal;">
-      YUSUF OLATUNJI TIJANI
-    </a>
-  </div>
-</header>
-    <h2 class="text-3xl text-center mt-9 font-bold text-blue-950">TALKS</h2>
+    <!-- Page Header -->
+    <header class="bg-slate-900 py-16 text-center border-b-4 border-indigo-500">
+      <div class="mx-auto max-w-4xl px-4">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-4">
+          Talks & Presentations
+        </h1>
+        <p class="text-slate-300 text-lg max-w-2xl mx-auto">
+          Invited seminars, conference presentations, and workshops on numerical methods, fluid dynamics, and computational mathematics.
+        </p>
+      </div>
+    </header>
 
-    <div class="lg:w-7/10 w-full lg:pl-3 pr-3">
-      <div class="bg-white m-4 rounded-lg shadow-md p-6">
-       
-          <div class="flex justify-center space-x-4 items-center bg-white"> 
-            <img  src="./SANUM_2025.jpg" alt="Profile Picture" class="max-w-80 h-auto rounded-lg shadow-md">
-                <img  src="./IMG-talk2.jpg" alt="Profile Picture" class="max-w-80 h-auto rounded-lg shadow-md">
+    <!-- Main Content Container -->
+    <main class="max-w-5xl mx-auto px-4 py-12">
+      
+      <!-- Featured Images Gallery -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div class="relative group overflow-hidden rounded-2xl shadow-md border border-slate-200 bg-white">
+            <img src="./SANUM_2025.jpg" alt="SANUM Presentation" class="w-full h-64 sm:h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900/80 to-transparent p-4">
+                <p class="text-white font-medium">Presenting at SANUM</p>
+            </div>
+        </div>
+        <div class="relative group overflow-hidden rounded-2xl shadow-md border border-slate-200 bg-white">
+            <img src="./IMG-talk2.jpg" alt="Seminar Talk" class="w-full h-64 sm:h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900/80 to-transparent p-4">
+                <p class="text-white font-medium">Departmental Seminar</p>
+            </div>
+        </div>
+      </div>
+
+      <!-- Talks List -->
+      <div class="space-y-6">
+
+        <!-- TALK 1: May 2025 -->
+        <article class="group bg-white rounded-2xl shadow-sm hover:shadow-xl border border-slate-100 p-6 md:p-8 flex flex-col md:flex-row gap-6 transition-all duration-300 relative overflow-hidden">
+          <div class="absolute left-0 top-0 bottom-0 w-1 bg-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          
+          <div class="md:w-32 shrink-0">
+            <span class="bg-indigo-50 text-indigo-700 font-bold px-3 py-2 rounded-xl text-sm flex flex-row md:flex-col items-center justify-center gap-2 text-center h-full">
+              <i class="far fa-calendar-alt text-lg"></i>
+              <span>May 2025</span>
+            </span>
           </div>
+          
+          <div class="flex-grow">
+            <h3 class="text-xl font-bold text-slate-900 leading-tight mb-3">
+              Numerical Methods: The unsung heroes of scientific computing
+            </h3>
+            <p class="text-slate-600 mb-4 flex items-start gap-3">
+              <i class="fas fa-map-marker-alt text-slate-400 mt-1"></i>
+              <span class="leading-relaxed">Seminar series in the Department of Mathematics, Rhodes University, Makhanda, South Africa.</span>
+            </p>
+            <div class="flex flex-wrap gap-3">
+                <a href="https://www.ru.ac.za/mathematics/newsandevents/seminars" target="_blank" class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 hover:text-indigo-800 bg-indigo-50 hover:bg-indigo-100 px-4 py-2 rounded-lg transition-colors">
+                    <i class="fas fa-link"></i> Event Link
+                </a>
+            </div>
+          </div>
+        </article>
 
-      <div class="bg-white m-4 rounded-lg shadow-md p-6">
-        <a href="https://www.ru.ac.za/mathematics/newsandevents/seminars"
-          ><p class="font-bold text-blue-600 underline">
-            Numerical Methods: The unsung heroes of scientific computing
-          </p>
-          <span class="text-gray-500 font-bold block text-right"
-            >May 2025</span
-          >
-          <p class="text-gray-800 leading-relaxed">
-            Seminar series in the Department of Mathematics, Rhodes University,
-            Makhanda, South Africa.
-          </p>
-        </a>
-      </div>    
+        <!-- TALK 2: April 2025 -->
+        <article class="group bg-white rounded-2xl shadow-sm hover:shadow-xl border border-slate-100 p-6 md:p-8 flex flex-col md:flex-row gap-6 transition-all duration-300 relative overflow-hidden">
+          <div class="absolute left-0 top-0 bottom-0 w-1 bg-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          
+          <div class="md:w-32 shrink-0">
+            <span class="bg-indigo-50 text-indigo-700 font-bold px-3 py-2 rounded-xl text-sm flex flex-row md:flex-col items-center justify-center gap-2 text-center h-full">
+              <i class="far fa-calendar-alt text-lg"></i>
+              <span>April 2025</span>
+            </span>
+          </div>
+          
+          <div class="flex-grow">
+            <h3 class="text-xl font-bold text-slate-900 leading-tight mb-3">
+              Sensitivity and numerical simulation of unsteady reactive hydromagnetic Eyring-Powell flow in a non-horizontal channel.
+            </h3>
+            <p class="text-slate-600 mb-4 flex items-start gap-3">
+              <i class="fas fa-map-marker-alt text-slate-400 mt-1"></i>
+              <span class="leading-relaxed">46th South African Numerical and Applied Mathematics (SANUM) 2025, University of the Witwatersrand, South Africa.</span>
+            </p>
+            <div class="flex flex-wrap gap-3">
+                <a href="https://sanum.github.io/programme.html" target="_blank" class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 hover:text-indigo-800 bg-indigo-50 hover:bg-indigo-100 px-4 py-2 rounded-lg transition-colors">
+                    <i class="fas fa-link"></i> Event Link
+                </a>
+            </div>
+          </div>
+        </article>
 
-      <div class="bg-white m-4 rounded-lg shadow-md p-6">
-        <a href="https://sanum.github.io/programme.html"
-          ><p class="font-bold text-blue-600 underline">
-            Sensitivity and numerical simulation of unsteady reactive hydromagnetic 
-            Eyring-Powell flow in a non-horizontal channel.
-          </p>
-          <span class="text-gray-500 font-bold block text-right"
-            >April 2025</span
-          >
-          <p class="text-gray-800 leading-relaxed">
-            46th South African Numerical and Applied Nathematics (SANUM) 2025, 
-            University of the Witwatersrand, South Africa
-          </p>
-        </a>
-      </div>  
+        <!-- TALK 3: Dec 2024 -->
+        <article class="group bg-white rounded-2xl shadow-sm hover:shadow-xl border border-slate-100 p-6 md:p-8 flex flex-col md:flex-row gap-6 transition-all duration-300 relative overflow-hidden">
+          <div class="absolute left-0 top-0 bottom-0 w-1 bg-slate-400 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          
+          <div class="md:w-32 shrink-0">
+            <span class="bg-slate-100 text-slate-700 font-bold px-3 py-2 rounded-xl text-sm flex flex-row md:flex-col items-center justify-center gap-2 text-center h-full">
+              <i class="far fa-calendar-alt text-lg"></i>
+              <span>Dec 2024</span>
+            </span>
+          </div>
+          
+          <div class="flex-grow">
+            <h3 class="text-xl font-bold text-slate-900 leading-tight mb-3">
+              Adaptive multidomain numerical solution for singularly perturbed fractional differential equation: Chebyshev pseudospectral method.
+            </h3>
+            <p class="text-slate-600 mb-4 flex items-start gap-3">
+              <i class="fas fa-map-marker-alt text-slate-400 mt-1"></i>
+              <span class="leading-relaxed">67th Annual Congress of the South African Mathematical Society (SAMS), University of Pretoria, South Africa.</span>
+            </p>
+            <div class="flex flex-wrap gap-3">
+                <a href="https://www.up.ac.za/cf-sams2024" target="_blank" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-slate-800 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-lg transition-colors">
+                    <i class="fas fa-link"></i> Event Link
+                </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- TALK 4: Aug 2024 (Has Slide Download) -->
+        <article class="group bg-white rounded-2xl shadow-sm hover:shadow-xl border border-slate-100 p-6 md:p-8 flex flex-col md:flex-row gap-6 transition-all duration-300 relative overflow-hidden">
+          <div class="absolute left-0 top-0 bottom-0 w-1 bg-slate-400 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          
+          <div class="md:w-32 shrink-0">
+            <span class="bg-slate-100 text-slate-700 font-bold px-3 py-2 rounded-xl text-sm flex flex-row md:flex-col items-center justify-center gap-2 text-center h-full">
+              <i class="far fa-calendar-alt text-lg"></i>
+              <span>Aug 2024</span>
+            </span>
+          </div>
+          
+          <div class="flex-grow">
+            <h3 class="text-xl font-bold text-slate-900 leading-tight mb-3">
+              Exploring fluid dynamics: The role of Mathematicians.
+            </h3>
+            <p class="text-slate-600 mb-4 flex items-start gap-3">
+              <i class="fas fa-map-marker-alt text-slate-400 mt-1"></i>
+              <span class="leading-relaxed">Seminar series in the Department of Mathematics, Rhodes University, Makhanda, South Africa.</span>
+            </p>
+            <div class="flex flex-wrap gap-3">
+                <a href="./PRESENT (3).pdf" download class="inline-flex items-center gap-2 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-lg transition-colors shadow-sm">
+                    <i class="fas fa-file-pdf"></i> Download Slides
+                </a>
+                <a href="https://www.ru.ac.za/mathematics/newsandevents/seminars/2024seminars/" target="_blank" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-slate-800 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-lg transition-colors">
+                    <i class="fas fa-link"></i> Event Link
+                </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- TALK 5: July 2024 (Has Slide Download) -->
+        <article class="group bg-white rounded-2xl shadow-sm hover:shadow-xl border border-slate-100 p-6 md:p-8 flex flex-col md:flex-row gap-6 transition-all duration-300 relative overflow-hidden">
+          <div class="absolute left-0 top-0 bottom-0 w-1 bg-slate-400 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          
+          <div class="md:w-32 shrink-0">
+            <span class="bg-slate-100 text-slate-700 font-bold px-3 py-2 rounded-xl text-sm flex flex-row md:flex-col items-center justify-center gap-2 text-center h-full">
+              <i class="far fa-calendar-alt text-lg"></i>
+              <span>July 2024</span>
+            </span>
+          </div>
+          
+          <div class="flex-grow">
+            <h3 class="text-xl font-bold text-slate-900 leading-tight mb-3">
+              Thermal analysis of extended surfaces using deep neural networks.
+            </h3>
+            <p class="text-slate-600 mb-4 flex items-start gap-3">
+              <i class="fas fa-map-marker-alt text-slate-400 mt-1"></i>
+              <span class="leading-relaxed">16th Annual Workshop on Computational Mathematics and Modelling (WOCCOM2024), University of Kwazulu-Natal, Pietermaritzburg, South Africa.</span>
+            </p>
+            <div class="flex flex-wrap gap-3">
+                <a href="./Yusuf_Tijani Presentation (2).pdf" download class="inline-flex items-center gap-2 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-lg transition-colors shadow-sm">
+                    <i class="fas fa-file-pdf"></i> Download Slides
+                </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- TALK 6: Nov 2022 -->
+        <article class="group bg-white rounded-2xl shadow-sm hover:shadow-xl border border-slate-100 p-6 md:p-8 flex flex-col md:flex-row gap-6 transition-all duration-300 relative overflow-hidden">
+          <div class="absolute left-0 top-0 bottom-0 w-1 bg-slate-300 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          
+          <div class="md:w-32 shrink-0">
+            <span class="bg-slate-50 text-slate-600 font-bold px-3 py-2 rounded-xl text-sm flex flex-row md:flex-col items-center justify-center gap-2 text-center h-full">
+              <i class="far fa-calendar-alt text-lg"></i>
+              <span>Nov 2022</span>
+            </span>
+          </div>
+          
+          <div class="flex-grow">
+            <h3 class="text-xl font-bold text-slate-900 leading-tight mb-3">
+              Finite difference method for Burgers-Huxley equation and biofilm formation.
+            </h3>
+            <p class="text-slate-600 mb-0 flex items-start gap-3">
+              <i class="fas fa-map-marker-alt text-slate-400 mt-1"></i>
+              <span class="leading-relaxed">Department of Mathematics and Applied Mathematics, Nelson Mandela University, Gqeberha, South Africa.</span>
+            </p>
+          </div>
+        </article>
+
+        <!-- TALK 7: Sept 2020 -->
+        <article class="group bg-white rounded-2xl shadow-sm hover:shadow-xl border border-slate-100 p-6 md:p-8 flex flex-col md:flex-row gap-6 transition-all duration-300 relative overflow-hidden">
+          <div class="absolute left-0 top-0 bottom-0 w-1 bg-slate-300 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          
+          <div class="md:w-32 shrink-0">
+            <span class="bg-slate-50 text-slate-600 font-bold px-3 py-2 rounded-xl text-sm flex flex-row md:flex-col items-center justify-center gap-2 text-center h-full">
+              <i class="far fa-calendar-alt text-lg"></i>
+              <span>Sept 2020</span>
+            </span>
+          </div>
+          
+          <div class="flex-grow">
+            <h3 class="text-xl font-bold text-slate-900 leading-tight mb-3">
+              On the numerical solution of 2D Burgers-Huxley equation using NSFD and classical methods.
+            </h3>
+            <p class="text-slate-600 mb-4 flex items-start gap-3">
+              <i class="fas fa-map-marker-alt text-slate-400 mt-1"></i>
+              <span class="leading-relaxed">18th International Conference of Numerical Analysis and Applied Mathematics (ICNAAM), Rhodes, Greece.</span>
+            </p>
+            <div class="flex flex-wrap gap-3">
+                <a href="https://pubs.aip.org/aip/acp/article-abstract/2425/1/020013/2822850/On-the-numerical-solution-of-2D-Burgers-Huxley?redirectedFrom=fulltext" target="_blank" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-slate-800 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-lg transition-colors">
+                    <i class="fas fa-link"></i> Conference Proceeding
+                </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- TALK 8: June 2016 -->
+        <article class="group bg-white rounded-2xl shadow-sm hover:shadow-xl border border-slate-100 p-6 md:p-8 flex flex-col md:flex-row gap-6 transition-all duration-300 relative overflow-hidden">
+          <div class="absolute left-0 top-0 bottom-0 w-1 bg-slate-300 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          
+          <div class="md:w-32 shrink-0">
+            <span class="bg-slate-50 text-slate-600 font-bold px-3 py-2 rounded-xl text-sm flex flex-row md:flex-col items-center justify-center gap-2 text-center h-full">
+              <i class="far fa-calendar-alt text-lg"></i>
+              <span>June 2016</span>
+            </span>
+          </div>
+          
+          <div class="flex-grow">
+            <h3 class="text-xl font-bold text-slate-900 leading-tight mb-3">
+              An oscillatory MHD convection flow past an infinite vertical porous plate with variable suction, radiation and heat generation in the presence of chemical reaction.
+            </h3>
+            <p class="text-slate-600 mb-0 flex items-start gap-3">
+              <i class="fas fa-map-marker-alt text-slate-400 mt-1"></i>
+              <span class="leading-relaxed">35th Annual Conference of the Nigerian Mathematical Society, Federal University of Technology, Minna, Nigeria.</span>
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 py-10 text-center text-slate-400 mt-12">
+      <div class="container mx-auto px-4 max-w-4xl flex flex-col items-center">
         
-      <div class="bg-white m-4 rounded-lg shadow-md p-6">
-        <a href="https://www.up.ac.za/cf-sams2024"
-          ><p class="font-bold text-blue-600 underline">
-            Adaptive multidomain numerical solution for singularly perturbed
-            fractional differential equation: Chebyshev pseudospectral method.
-          </p>
-          <span class="text-gray-500 font-bold block text-right"
-            >December 2024</span
-          >
-          <p class="text-gray-800 leading-relaxed">
-            67th Annual Congress of the South African Mathematical Society
-            (SAMS), University of Pretoria, South Africa.
-          </p>
-        </a>
-      </div>
-
-      <div class="bg-white m-4 rounded-lg shadow-md p-6">
-        <a
-          href="https://www.ru.ac.za/mathematics/newsandevents/seminars/2024seminars/"
-          ><p class="font-bold text-blue-600 underline">
-            Exploring fluid dynamics: The role of Mathematicians.
-          </p>
-          <span class="text-gray-500 font-bold block text-right"
-            >August 2024</span
-          >
-          <p class="text-gray-800 leading-relaxed">
-            Seminar series in the Department of Mathematics, Rhodes University,
-            Makhanda, South Africa.
-          </p>
-          <a
-            href="./PRESENT (3).pdf"
-            download
-            class="flex justify-end mb-0 pb-0"
-          >
-            <button
-              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-            >
-              Download
-            </button>
+        <div class="flex items-center gap-6 mb-8">
+          <a href="https://x.com/olodyusuf" target="_blank" class="hover:text-white transition-colors transform hover:scale-110">
+            <i class="fab fa-twitter text-2xl"></i>
           </a>
-        </a>
-      </div>
-
-      <div class="bg-white m-4 rounded-lg shadow-md p-6">
-        <a href=""
-          ><p class="font-bold text-blue-600 underline">
-            Thermal analysis of extended surfaces using deep neural networks.
-          </p>
-          <span class="text-gray-500 font-bold block text-right"
-            >July 2024</span
-          >
-          <p class="text-gray-800 leading-relaxed">
-            16th Annual Workshop on Computational Mathematics and Modelling
-            (WOCCOM2024), University of Kwazulu-Natal, Pietermaritzburg, South Africa.
-          </p>
-        </a>
-        <a
-          href="./Yusuf_Tijani Presentation (2).pdf"
-          class="flex justify-end mb-0 pb-0"
-        >
-          <button
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          >
-            Download
-          </button>
-        </a>
-      </div>
-
-      <div class="bg-white m-4 rounded-lg shadow-md p-6">
-        <a href="#"
-          ><p class="font-bold text-blue-600 underline">
-            Finite difference method for Burgers-Huxley equation and biofilm
-            formation.
-          </p>
-          <span class="text-gray-500 font-bold block text-right"
-            >November 2022</span
-          >
-          <p class="text-gray-800 leading-relaxed">
-            Department of Mathematics and Applied Mathematics, Nelson Mandela
-            University, Gqeberha, South Africa.
-          </p>
-        </a>
-      </div>
-
-      <div class="bg-white m-4 rounded-lg shadow-md p-6">
-        <a href="https://pubs.aip.org/aip/acp/article-abstract/2425/1/020013/2822850/On-the-numerical-solution-of-2D-Burgers-Huxley?redirectedFrom=fulltext"
-          ><p class="font-bold text-blue-600 underline">
-            On the numerical solution of 2D Burgers-Huxley equation using NSFD
-            and classical methods.
-          </p>
-          <span class="text-gray-500 font-bold block text-right"
-            >September 2020</span
-          >
-          <p class="text-gray-800 leading-relaxed">
-            18th International Conference of Numerical Analysis and Applied
-            Mathematics (ICNAAM), Rhodes, Greece.
-          </p>
-        </a>
-      </div>
-
-      <div class="bg-white m-4 rounded-lg shadow-md p-6">
-        <a href="#"
-          ><p class="font-bold text-blue-600 underline">
-            An oscillatory MHD convection flow past an infinite vertical porous
-            plate with variable suction, radiation and heat generation in the
-            presence of chemical reaction.
-          </p>
-          <span class="text-gray-500 font-bold block text-right"
-            >June 2016</span
-          >
-          <p class="text-gray-800 leading-relaxed">
-            35th Annual Conference of the Nigerian Mathematical society, Federal
-            University of Technology, Minna, Nigeria.
-          </p>
-        </a>
-      </div>
-    </div>
-
-    <footer class="bg-green-100 shadow-sm py-4 text-center">
-      <div class="container mx-auto">
-        <p class="text-xl font-bold text-gray-600 mb-2">Sitemap</p>
-        <div class="flex justify-evenly bm-2">
-          <p class="text-sm font-bold text-gray-600 mr-4">FOLLOW:</p>
-          <a
-            href="https://x.com/olodyusuf"
-            class="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded"
-          >
-            <i class="fab fa-twitter text-blue-400 text-lg"></i>
-            <span class="text-gray-700">Twitter</span>
+          <a href="#" target="_blank" class="hover:text-white transition-colors transform hover:scale-110">
+            <i class="fab fa-github text-2xl"></i>
           </a>
-          <a
-            href="#"
-            class="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded"
-          >
-            <i class="fab fa-github text-gray-800 text-lg"></i>
-            <span class="text-gray-700">GitHub</span>
+          <a href="https://www.linkedin.com/in/yusuf-olatunji-tijani-5489b324" target="_blank" class="hover:text-white transition-colors transform hover:scale-110">
+            <i class="fab fa-linkedin-in text-2xl"></i>
           </a>
-          <a
-            href="https://www.linkedin.com/in/yusuf-olatunji-tijani-5489b324"
-            class="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded"
-          >
-            <i class="fab fa-linkedin-in text-blue-700 text-lg"></i>
-            <span class="text-gray-700">LinkedIn</span>
+          <a href="https://scholar.google.com/citations?user=ZD7XicUAAAAJ&hl=en" target="_blank" class="hover:text-white transition-colors transform hover:scale-110">
+            <i class="fas fa-graduation-cap text-2xl"></i>
           </a>
         </div>
-        <p class="text-xs text-gray-600">
-          &copy; 2025 Yusuf Olatunji Tijani. All right reserved
+        
+        <p class="text-sm">
+          &copy; <span id="currentYear"></span> Yusuf Olatunji Tijani. All rights reserved.
         </p>
       </div>
     </footer>
+    
+    <!-- Script to set the dynamic year automatically -->
+    <script>
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
