@@ -3,199 +3,254 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Yusuf Olatunji Tijani - Academic Portfolio</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Google font -->
-    <!-- @import url('https://fonts.googleapis.com/css2?family=Monomakh&display=swap'); -->
- </head>
-<body class="bg-gray-100">
+    <!-- Custom Tailwind Configuration -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-indigo-200 selection:text-indigo-900">
 
-<nav class="bg-white p-4 shadow-md">
-    <div class="container mx-auto flex justify-between items-center" x-data="{ isOpen: false }">
-        <a href="./index.html">
-            <img class="size-10 rounded-full" src="./IMG-ME.jpg" alt="Your Company">
+    <!-- Navbar (Matches Publications Page) -->
+    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
+      <div class="container mx-auto px-4 py-3 flex justify-between items-center max-w-6xl" x-data="{ isOpen: false }">
+        
+        <a href="./index.html" class="flex items-center gap-3 group">
+          <img class="size-10 rounded-full border-2 border-transparent group-hover:border-indigo-500 transition-all object-cover" src="./IMG-ME.jpg" alt="Yusuf Olatunji Tijani" onerror="this.src='https://ui-avatars.com/api/?name=Yusuf+Tijani&background=4f46e5&color=fff'"/>
+          <span class="font-bold text-slate-800 tracking-tight hidden sm:block group-hover:text-indigo-600 transition-colors">Yusuf O. Tijani</span>
         </a>
 
-        <a href="./Yusuf_CV2025.pdf" download class="text-xl bg-green-300 py-2 px-3 rounded font-bold text-gray-800">
-          <i class="fas fa-download"></i>
-                    <sp.an class="text-gray-700">CV</span>
-        </a>
-
-        <div class="md:hidden">
-            <button @click="isOpen = !isOpen" type="button" class="text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200">
-                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-            </button>
-        </div>
-
-        <div class="hidden md:flex space-x-6">
-            <a href="./publication.html" class="text-gray-700 font-bold hover:text-blue-900">Publications</a>
-            <a href="./talks.html" class="text-gray-700 font-bold hover:text-blue-900">Talks</a>
-            <a href="./Teachings.html" class="text-gray-700 font-bold hover:text-blue-900">Teaching</a>
-            <a href="./portfolio.html" class="text-gray-700 font-bold hover:text-blue-900">Portfolio</a>
-            <a href="./blog-post.html" class="text-gray-700 font-bold hover:text-blue-900">Blog Posts</a>
-        </div>
-
-        <div class="md:hidden absolute top-16 right-4 w-48 bg-white rounded-md shadow-lg" x-show="isOpen" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-200 transform" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95">
-            <div class="py-2">
-                <a href="./publication.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Publications</a>
-                <a href="./talks.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Talks</a>
-                <a href="./Teachings.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Teaching</a>
-                <a href="./portfolio.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Portfolio</a>
-                <a href="./blog-post.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Blog Posts</a>
-            </div>
-        </div>
-    </div>
-</nav>
-
-<header class="bg-blue-950 shadow-sm">
-  <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-    <a href="./index.html" class="text-3xl font-bold tracking-tight text-white" style="font-family: 'Monomakh', serif; font-weight: 400; font-style: normal;">
-      YUSUF OLATUNJI TIJANI
-    </a>
-  </div>
-</header>
-
-<div class="container mx-auto p-4">
-    <div class="bg-white rounded-lg shadow-md flex md:flex-row flex-col"> 
-       <div class="md:w-1/3 w-full p-3">  
-        <img  src="./IMG-ME.jpg" alt="Profile Picture" class="w-60 h-auto rounded-lg shadow-md">
-        </div>
-        <div class="md:w-2/3 w-full p-6 flex flex-col justify-center"> 
-           <div class="grid grid-cols-2 md:grid-cols-4 gap-1"> 
-             <a href="https://www.wits.ac.za/people/academic-a-z-listing/t/yusuftijaniwitsacza/" class="flex items-center space-x-2 hover:bg-gray-100 p-1 rounded">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <span class="text-gray-700">Wits University</span>
-                </a>
-                <a href="https://x.com/olodyusuf" class="flex items-center space-x-2 hover:bg-gray-100 p-1 rounded">
-                    <i class="fab fa-twitter text-blue-400 text-lg"></i>
-                    <span class="text-gray-700">Twitter</span>
-                </a>
-                <a href="https://orcid.org/0000-0002-9127-7173" class="flex items-center space-x-2 hover:bg-gray-100 p-1 rounded">
-                    <i class="fa-brands fa-orcid"></i>
-                    <span class="text-gray-700">ORCID</span>
-                </a>
-                <a href="https://www.linkedin.com/in/yusuf-olatunji-tijani-5489b324" class="flex items-center space-x-2 hover:bg-gray-100 p-1 rounded">
-                    <i class="fab fa-linkedin-in text-blue-700 text-lg"></i>
-                    <span class="text-gray-700">LinkedIn</span>
-                </a>
-                <a href="https://www.researchgate.net/profile/Yusuf-Tijani?ev=hdr_xprf" class="flex items-center space-x-2 hover:bg-gray-100 p-1 rounded">
-                    <i class="fa-brands fa-researchgate"></i>
-                    <span class="text-gray-700">ResearchGate</span>
-                </a>
-               <a href="https://scholar.google.com/citations?hl=en&user=ZD7XicUAAAAJ&view_op=list_works&sortby=pubdate" class="flex items-center space-x-2 hover:bg-gray-100 p-1 rounded">
-                    <i class="fab fa-github text-gray-800 text-lg"></i>
-                    <span class="text-gray-700">Google Scholar</span>
-               </a>
-
-               <!--
-                <a href="https://scholar.google.com/citations?hl=en&user=ZD7XicUAAAAJ&view_op=list_works&sortby=pubdate" class="flex items-center space-x-2 hover:bg-gray-100 p-1 rounded">
-                    <i class="fa-brands fa-google-scholar"></i>
-                    <span class="text-gray-700">Google Scholar</span>
-                </a>
-                -->
-
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="lg:w-7/10 w-full lg:pl-8">
-    <div class="bg-white rounded-lg shadow-md p-6">
-        <p class="text-gray-800 leading-relaxed text-justify">
-            <span class="text-4xl font-mono">I</span> am  a lecturer in the School of Computer Science and Applied Mathematics, University of the Witwatersrand, Johannesburg, 
-            South Africa. My research interests lie in the  design and implementation of numerical method, computational fluid dynamics, mathematical modelling of dynamical systems,
-            fractional calculus and machine learning.
-      </p>
-      </div>
-    
-    
-    <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4 bg-white p-4">
-      <img src="./IMG-1a.jpg" alt="Profile Picture" class="w-full max-w-full md:w-1/4 lg:w-1/4 h-auto rounded-lg shadow-md">
-      <img src="./IMG-1b.jpg" alt="Profile Picture" class="w-full max-w-full md:w-1/4 lg:w-1/4 h-auto rounded-lg shadow-md">
-    </div>
-    
-    <!-- 
-    <div class="flex justify-center space-x-4 items-center bg-white"> 
-        <img  src="./IMG-1a.jpg" alt="Profile Picture" class="max-w-80 h-auto rounded-lg shadow-md">
-            <img  src="./IMG-1b.jpg" alt="Profile Picture" class="max-w-80 h-auto rounded-lg shadow-md">
-    </div>
-     --> 
-
-    <div class="bg-white rounded-lg  shadow-md p-6">
-        <p class="text-gray-800 leading-relaxed text-justify">
-
-            <span class="text-4xl font-mono">P</span>rior to joining the University of the Witwatersrand, I was a postdoctoral research fellow at Rhodes University, Grahamstown, 
-            South Africa (2024–2025). During this time, my research focused on constructing multidomain pseudospectral methods for fractional differential equations.
-            Concurrently, I broadened my research horizon by engaging in multidisciplinary projects that bridged the gap between mathematical modelling and machine learning.
-</p> 
-</div>        
-      <div class="bg-white rounded-lg  shadow-md p-6">
-        <p class="text-gray-800 leading-relaxed text-justify">
-
-            <span class="text-4xl font-mono">I</span> obtained my Doctoral degree from Nelson Mandela University, Port-Elizabeth, South Africa in 2023. 
-            My PhD research focused on developing and implementing a structure-preserving numerical scheme for the advection-diffusion-reaction equations. 
-            I developed a non-standard finite difference scheme for the preservation of a biofilm mathematical model, designed an accurate scheme for the Burgers-Huxley 
-            equation and singularly perturbed equations. Analysis such as travelling waves were numerically investigated. 
-</p>
-
-<div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4 bg-white p-4">
-  <img src="./IMG-2a.jpg" alt="Profile Picture" class="w-full max-w-full md:w-1/4 h-auto rounded-lg shadow-md">
-  <img src="./IMG-2b.jpg" alt="Profile Picture" class="w-full max-w-full md:w-1/4 h-auto rounded-lg shadow-md">
-  <img src="./Ind5.jpg" alt="Profile Picture" class="w-full max-w-full md:w-1/4 h-auto rounded-lg shadow-md">
-</div>
-
-<p class="text-gray-800 mt-4 leading-relaxed text-justify">
-    <span class="text-4xl font-mono">I</span> obtained my Master of Science (MSc) degree from Obafemi Awolowo University, Nigeria in 2018. 
-    I developed a mathematical model for simulating fluid flow in a rotating medium. I used the Laplace Transform method to obtain analytical solution, 
-    and as a means of benchmarking the numerical method. The finite difference technique, a numerical method, was applied using the Maple computing platform 
-    in cases where obtaining a closed-form solution is not feasible.
-   </p>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="./publication.html" class="text-slate-600 font-medium hover:text-indigo-600 transition-colors">Publications</a>
+          <a href="./talks.html" class="text-slate-600 font-medium hover:text-indigo-600 transition-colors">Talks</a>
+          <a href="./Teachings.html" class="text-slate-600 font-medium hover:text-indigo-600 transition-colors">Teaching</a>
+          <a href="./portfolio.html" class="text-slate-600 font-medium hover:text-indigo-600 transition-colors">Portfolio</a>
+          <a href="./blog-post.html" class="text-slate-600 font-medium hover:text-indigo-600 transition-colors">Blog</a>
           
-    <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4 bg-white p-4">
-      <img src="./Gop.jpg" alt="Profile Picture" class="w-full max-w-full md:w-1/4 lg:w-1/4 h-auto rounded-lg shadow-md">
-    </div>
-
-<!-- <div class="bg-white rounded-lg  shadow-md p-6"> -->
-<!-- <p class="text-gray-800 leading-relaxed text-justify">  -->
-<p class="text-gray-800 mt-4 leading-relaxed text-justify">    
-    <span class="text-4xl font-mono">I</span> completed my Bachelor (Honours) degree in Mathematics at Obafemi Awolowo University, Ile-Ife, Nigeria, in 2013. 
-    My Honours thesis is titled: Simple Mathematical Model for Urban Growth (Based on Economy and Geographical Factors). 
-    I completed my mandatory one-year national youth service in Rivers State, Nigeria, from 2014 to 2015, contributing to the development of the nation.
-   </p>
-          
-      </div>
-      <div class="bg-white rounded-lg shadow-md p-6">
-      </div>
+          <a href="./Yusuf_CV2025.pdf" download class="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-medium transition-all shadow-sm hover:shadow">
+            <i class="fas fa-file-download"></i> Download CV
+          </a>
         </div>
 
-            <footer class="bg-green-100 shadow-sm py-4 text-center">
-                <div class="container mx-auto">
-                  <p class=" text-xl font-bold text-gray-600 mb-2">Sitemap</p>
-                  <div class="flex justify-evenly bm-2">
-                        <!-- Paste the flag counter code here, perhaps below your copyright -->
-                        <a href="https://info.flagcounter.com/dKtM"><img src="https://s01.flagcounter.com/count2/dKtM/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_12/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
-                      
-                      <p class="text-sm font-bold text-gray-600 mr-4">FOLLOW:</p>
-                      <a href="https://x.com/olodyusuf" class="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded">
-                        <i class="fab fa-twitter text-blue-400 text-lg"></i>
-                        <span class="text-gray-700">Twitter</span>
+        <div class="md:hidden flex items-center gap-4">
+          <a href="./Yusuf_CV2025.pdf" download class="text-indigo-600 font-medium text-sm border border-indigo-600 px-3 py-1.5 rounded-md">CV</a>
+          <button @click="isOpen = !isOpen" type="button" class="text-slate-500 hover:text-slate-700 focus:outline-none">
+            <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </button>
+        </div>
+
+        <div x-show="isOpen" @click.away="isOpen = false" x-transition.opacity class="absolute top-full left-0 right-0 bg-white border-b border-slate-200 shadow-xl md:hidden">
+          <div class="px-4 py-4 space-y-3 flex flex-col">
+            <a href="./publication.html" class="text-slate-600 font-medium">Publications</a>
+            <a href="./talks.html" class="text-slate-600 font-medium">Talks</a>
+            <a href="./Teachings.html" class="text-slate-600 font-medium">Teaching</a>
+            <a href="./portfolio.html" class="text-slate-600 font-medium">Portfolio</a>
+            <a href="./blog-post.html" class="text-slate-600 font-medium">Blog Posts</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Profile Section -->
+    <header class="bg-slate-900 border-b-4 border-indigo-500 pt-16 pb-20 relative overflow-hidden">
+        <!-- Subtle background pattern -->
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#4f46e5 1px, transparent 1px); background-size: 30px 30px;"></div>
+        
+        <div class="container mx-auto px-4 max-w-5xl relative z-10 flex flex-col md:flex-row items-center gap-10">
+            <!-- Profile Image -->
+            <div class="shrink-0 relative group">
+                <div class="absolute inset-0 bg-indigo-500 rounded-2xl rotate-6 group-hover:rotate-12 transition-transform duration-300"></div>
+                <img src="./IMG-ME.jpg" alt="Yusuf Olatunji Tijani" class="relative w-48 h-48 md:w-64 md:h-64 object-cover rounded-2xl shadow-2xl border-4 border-slate-800 z-10">
+            </div>
+
+            <!-- Profile Info -->
+            <div class="text-center md:text-left flex-grow">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-2">
+                    Yusuf O. Tijani, <span class="text-indigo-400 font-light">PhD</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-300 mb-6 font-light max-w-2xl">
+                    Lecturer in the School of Computer Science and Applied Mathematics <br class="hidden md:block">
+                    <a href="https://www.wits.ac.za/people/academic-a-z-listing/t/yusuftijaniwitsacza/" target="_blank" class="text-white hover:text-indigo-300 font-medium transition-colors"><i class="fa-solid fa-location-dot mr-1 text-indigo-500"></i> University of the Witwatersrand, Johannesburg, SA</a>
+                </p>
+
+                <!-- Academic Social Links -->
+                <div class="flex flex-wrap justify-center md:justify-start gap-3">
+                    <a href="https://scholar.google.com/citations?hl=en&user=ZD7XicUAAAAJ" target="_blank" class="bg-slate-800 hover:bg-indigo-600 text-white px-4 py-2 rounded-full text-sm font-medium transition-colors shadow-sm flex items-center gap-2">
+                        <i class="fa-brands fa-google"></i> Scholar
                     </a>
-                    <a href="#" class="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded">
-                        <i class="fab fa-github text-gray-800 text-lg"></i>
-                        <span class="text-gray-700">GitHub</span>
+                    <a href="https://orcid.org/0000-0002-9127-7173" target="_blank" class="bg-slate-800 hover:bg-[#A6CE39] text-white px-4 py-2 rounded-full text-sm font-medium transition-colors shadow-sm flex items-center gap-2">
+                        <i class="fa-brands fa-orcid"></i> ORCID
                     </a>
-                    <a href="https://www.linkedin.com/in/yusuf-olatunji-tijani-5489b324" class="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded">
-                        <i class="fab fa-linkedin-in text-blue-700 text-lg"></i>
-                        <span class="text-gray-700">LinkedIn</span>
+                    <a href="https://www.researchgate.net/profile/Yusuf-Tijani" target="_blank" class="bg-slate-800 hover:bg-[#00CCBB] text-white px-4 py-2 rounded-full text-sm font-medium transition-colors shadow-sm flex items-center gap-2">
+                        <i class="fa-brands fa-researchgate"></i> ResearchGate
                     </a>
-                  </div>
-                  <p class="text-xs text-gray-600">&copy; <span id="year"></span> Yusuf Olatunji Tijani. All right reserved</p>
+                    <a href="https://www.linkedin.com/in/yusuf-olatunji-tijani-5489b324" target="_blank" class="bg-slate-800 hover:bg-[#0077b5] text-white px-4 py-2 rounded-full text-sm font-medium transition-colors shadow-sm flex items-center gap-2">
+                        <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+                    </a>
+                    <a href="https://x.com/olodyusuf" target="_blank" class="bg-slate-800 hover:bg-[#1DA1F2] text-white px-4 py-2 rounded-full text-sm font-medium transition-colors shadow-sm flex items-center gap-2">
+                        <i class="fa-brands fa-twitter"></i> Twitter
+                    </a>
                 </div>
-              </footer>
+            </div>
+        </div>
+    </header>
 
+    <!-- Main Content: Academic Journey / Timeline -->
+    <main class="max-w-4xl mx-auto px-4 py-16">
+        
+        <div class="mb-12">
+            <h2 class="text-3xl font-bold text-slate-900 mb-4 tracking-tight">Biography & Academic Journey</h2>
+            <p class="text-lg text-slate-600 leading-relaxed">
+                My research interests lie in the design and implementation of numerical methods, computational fluid dynamics, mathematical modelling of dynamical systems, fractional calculus, and machine learning.
+            </p>
+        </div>
+
+        <!-- The Timeline -->
+        <div class="relative border-l-2 border-indigo-200 ml-4 md:ml-6 space-y-12">
+            
+            <!-- Present Role -->
+            <div class="relative pl-8 md:pl-10">
+                <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-indigo-600 border-4 border-slate-50 shadow"></div>
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <span class="text-indigo-600 font-bold text-sm tracking-widest uppercase mb-1 block">Present</span>
+                    <h3 class="text-2xl font-bold text-slate-900">Lecturer</h3>
+                    <p class="text-slate-500 font-medium mb-4"><i class="fa-solid fa-building-columns mr-2"></i>University of the Witwatersrand</p>
+                    <p class="text-slate-700 leading-relaxed">
+                        Currently serving as a lecturer in the School of Computer Science and Applied Mathematics in Johannesburg, South Africa, where I focus on advancing computational mathematics and mentoring the next generation of applied mathematicians.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Postdoc -->
+            <div class="relative pl-8 md:pl-10">
+                <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-indigo-400 border-4 border-slate-50 shadow"></div>
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <span class="text-slate-500 font-bold text-sm tracking-widest uppercase mb-1 block">2024 &ndash; 2025</span>
+                    <h3 class="text-2xl font-bold text-slate-900">Postdoctoral Research Fellow</h3>
+                    <p class="text-slate-500 font-medium mb-4"><i class="fa-solid fa-building-columns mr-2"></i>Rhodes University</p>
+                    <p class="text-slate-700 leading-relaxed mb-6">
+                        My research focused on constructing multidomain pseudospectral methods for fractional differential equations. Concurrently, I broadened my research horizon by engaging in multidisciplinary projects that bridged the gap between mathematical modelling and machine learning.
+                    </p>
+                    
+                    <!-- Image Gallery for Postdoc -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <img src="./IMG-1a.jpg" alt="Postdoc Research 1" class="w-full h-48 object-cover rounded-xl shadow-sm hover:opacity-90 transition-opacity">
+                        <img src="./IMG-1b.jpg" alt="Postdoc Research 2" class="w-full h-48 object-cover rounded-xl shadow-sm hover:opacity-90 transition-opacity">
+                    </div>
+                </div>
+            </div>
+
+            <!-- PhD -->
+            <div class="relative pl-8 md:pl-10">
+                <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-400 border-4 border-slate-50 shadow"></div>
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <span class="text-slate-500 font-bold text-sm tracking-widest uppercase mb-1 block">Graduated 2023</span>
+                    <h3 class="text-2xl font-bold text-slate-900">PhD in Mathematics</h3>
+                    <p class="text-slate-500 font-medium mb-4"><i class="fa-solid fa-building-columns mr-2"></i>Nelson Mandela University</p>
+                    <p class="text-slate-700 leading-relaxed mb-6">
+                        My PhD research focused on developing and implementing a structure-preserving numerical scheme for advection-diffusion-reaction equations. I developed a non-standard finite difference scheme for the preservation of a biofilm mathematical model and designed an accurate scheme for the Burgers-Huxley equation.
+                    </p>
+                    
+                    <!-- Image Gallery for PhD -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <img src="./IMG-2a.jpg" alt="PhD Memory 1" class="w-full h-40 object-cover rounded-xl shadow-sm hover:opacity-90 transition-opacity border border-slate-100">
+                        <img src="./IMG-2b.jpg" alt="PhD Memory 2" class="w-full h-40 object-cover rounded-xl shadow-sm hover:opacity-90 transition-opacity border border-slate-100">
+                        <img src="./Ind5.jpg" alt="PhD Memory 3" class="w-full h-40 object-cover rounded-xl shadow-sm hover:opacity-90 transition-opacity border border-slate-100">
+                    </div>
+                </div>
+            </div>
+
+            <!-- MSc -->
+            <div class="relative pl-8 md:pl-10">
+                <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-300 border-4 border-slate-50 shadow"></div>
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <span class="text-slate-500 font-bold text-sm tracking-widest uppercase mb-1 block">Graduated 2018</span>
+                    <h3 class="text-2xl font-bold text-slate-900">Master of Science (MSc)</h3>
+                    <p class="text-slate-500 font-medium mb-4"><i class="fa-solid fa-building-columns mr-2"></i>Obafemi Awolowo University</p>
+                    <p class="text-slate-700 leading-relaxed mb-6">
+                        Developed a mathematical model for simulating fluid flow in a rotating medium. I utilized the Laplace Transform method to obtain analytical solutions to benchmark numerical methods, specifically applying the finite difference technique in cases where closed-form solutions were not feasible.
+                    </p>
+                    <!-- Image for MSc -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <img src="./Gop.jpg" alt="MSc Memory" class="w-full h-56 object-cover rounded-xl shadow-sm hover:opacity-90 transition-opacity border border-slate-100">
+                    </div>
+                </div>
+            </div>
+
+            <!-- BSc -->
+            <div class="relative pl-8 md:pl-10">
+                <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-200 border-4 border-slate-50 shadow"></div>
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <span class="text-slate-500 font-bold text-sm tracking-widest uppercase mb-1 block">Graduated 2013</span>
+                    <h3 class="text-2xl font-bold text-slate-900">Bachelor of Science (Hons) in Mathematics</h3>
+                    <p class="text-slate-500 font-medium mb-4"><i class="fa-solid fa-building-columns mr-2"></i>Obafemi Awolowo University</p>
+                    <p class="text-slate-700 leading-relaxed">
+                        Honours thesis titled: <em>"Simple Mathematical Model for Urban Growth (Based on Economy and Geographical Factors)"</em>. I subsequently completed my mandatory one-year national youth service in Rivers State, Nigeria (2014–2015).
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 py-10 text-center text-slate-400 mt-12">
+      <div class="container mx-auto px-4 max-w-4xl flex flex-col items-center">
+        
+        <!-- Flag Counter -->
+        <div class="mb-8 p-3 bg-white/5 rounded-xl border border-slate-700 inline-block hover:bg-white/10 transition-colors">
+            <a href="https://info.flagcounter.com/dKtM" target="_blank">
+                <img src="https://s01.flagcounter.com/count2/dKtM/bg_0f172a/txt_e2e8f0/border_0f172a/columns_3/maxflags_12/viewers_0/labels_1/pageviews_0/flags_0/percent_0/" alt="Flag Counter" class="rounded opacity-90 hover:opacity-100 transition-opacity">
+            </a>
+        </div>
+
+        <div class="flex items-center gap-6 mb-6">
+          <a href="https://x.com/olodyusuf" target="_blank" class="hover:text-white transition-colors transform hover:scale-110">
+            <i class="fab fa-twitter text-2xl"></i>
+          </a>
+          <a href="#" target="_blank" class="hover:text-white transition-colors transform hover:scale-110">
+            <i class="fab fa-github text-2xl"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/yusuf-olatunji-tijani-5489b324" target="_blank" class="hover:text-white transition-colors transform hover:scale-110">
+            <i class="fab fa-linkedin-in text-2xl"></i>
+          </a>
+          <a href="https://scholar.google.com/citations?hl=en&user=ZD7XicUAAAAJ" target="_blank" class="hover:text-white transition-colors transform hover:scale-110">
+            <i class="fas fa-graduation-cap text-2xl"></i>
+          </a>
+        </div>
+        
+        <p class="text-sm">
+          &copy; <span id="currentYear"></span> Yusuf Olatunji Tijani. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Script to set the dynamic year automatically -->
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
