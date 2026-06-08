@@ -3,270 +3,282 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog Posts</title>
+    <title>Blog & News - Yusuf Olatunji Tijani</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script
-      defer
-      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+    <!-- Custom Tailwind Configuration -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+          }
+        }
+      }
+    </script>
   </head>
-
-  <body class="bg-gray-100">
-    <nav class="bg-white p-4 shadow-md">
-      <div
-        class="container mx-auto flex justify-between items-center"
-        x-data="{ isOpen: false }"
-      >
-        <a href="./index.html">
-          <img
-            class="size-10 rounded-full"
-            src="./IMG-ME.jpg"
-            alt="Your Company"
-          />
-        </a>
-        <a
-          href="./Yusuf_CV2025.pdf"
-          download
-          class="text-xl bg-green-300 py-2 px-3 rounded font-bold text-gray-800"
-        >
-          <i class="fas fa-download"></i>
-          <span class="text-gray-700">CV</span>
+  <body class="bg-slate-50 text-slate-800 antialiased selection:bg-indigo-200 selection:text-indigo-900">
+    
+    <!-- Navbar -->
+    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
+      <div class="container mx-auto px-4 py-3 flex justify-between items-center max-w-6xl" x-data="{ isOpen: false }">
+        
+        <!-- Logo/Image -->
+        <a href="./index.html" class="flex items-center gap-3 group">
+          <img class="size-10 rounded-full border-2 border-transparent group-hover:border-indigo-500 transition-all object-cover" src="./IMG-ME.jpg" alt="Yusuf Olatunji Tijani" onerror="this.src='https://ui-avatars.com/api/?name=Yusuf+Tijani&background=4f46e5&color=fff'"/>
+          <span class="font-bold text-slate-800 tracking-tight hidden sm:block group-hover:text-indigo-600 transition-colors">Yusuf O. Tijani</span>
         </a>
 
-        <div class="md:hidden">
-          <button
-            @click="isOpen = !isOpen"
-            type="button"
-            class="text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200"
-          >
-            <svg
-              class="h-6 w-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
-            </svg>
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="./publication.html" class="text-slate-600 font-medium hover:text-indigo-600 transition-colors">Publications</a>
+          <a href="./talks.html" class="text-slate-600 font-medium hover:text-indigo-600 transition-colors">Talks</a>
+          <a href="./Teachings.html" class="text-slate-600 font-medium hover:text-indigo-600 transition-colors">Teaching</a>
+          <a href="./portfolio.html" class="text-slate-600 font-medium hover:text-indigo-600 transition-colors">Portfolio</a>
+          <a href="./blog-post.html" class="text-indigo-600 font-semibold border-b-2 border-indigo-600 pb-1">Blog Posts</a>
+          
+          <a href="./Yusuf_CV2025.pdf" download class="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-medium transition-all shadow-sm hover:shadow">
+            <i class="fas fa-file-download"></i> Download CV
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex items-center gap-4">
+          <a href="./Yusuf_CV2025.pdf" download class="text-indigo-600 font-medium text-sm border border-indigo-600 px-3 py-1.5 rounded-md">CV</a>
+          <button @click="isOpen = !isOpen" type="button" class="text-slate-500 hover:text-slate-700 focus:outline-none">
+            <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
           </button>
         </div>
 
-        <div class="hidden md:flex space-x-6">
-          <a
-            href="./publication.html"
-            class="text-gray-700 font-bold hover:text-blue-900"
-            >Publications</a
-          >
-          <a
-            href="./talks.html"
-            class="text-gray-700 font-bold hover:text-blue-900"
-            >Talks</a
-          >
-          <a
-            href="./Teachings.html"
-            class="text-gray-700 font-bold hover:text-blue-900"
-            >Teaching</a
-          >
-          <a
-            href="./portfolio.html"
-            class="text-gray-700 font-bold hover:text-blue-900"
-            >Portfolio</a
-          >
-          <a
-            href="./blog-post.html"
-            class="text-gray-700 font-bold hover:text-blue-900"
-            >Blog Posts</a
-          >
-        </div>
-
-        <div
-          class="md:hidden absolute top-16 right-4 w-48 bg-white rounded-md shadow-lg"
-          x-show="isOpen"
-          x-transition:enter="transition ease-out duration-300 transform"
-          x-transition:enter-start="opacity-0 scale-95"
-          x-transition:enter-end="opacity-100 scale-100"
-          x-transition:leave="transition ease-in duration-200 transform"
-          x-transition:leave-start="opacity-100 scale-100"
-          x-transition:leave-end="opacity-0 scale-95"
-        >
-          <div class="py-2">
-            <a
-              href="./publication.html"
-              class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-              >Publications</a
-            >
-            <a
-              href="./talks.html"
-              class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-              >Talks</a
-            >
-            <a
-              href="./Teachings.html"
-              class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-              >Teaching</a
-            >
-            <a
-              href="./portfolio.html"
-              class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-              >Portfolio</a
-            >
-            <a
-              href="./blog-post.html"
-              class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-              >Blog Posts</a
-            >
+        <!-- Mobile Dropdown -->
+        <div x-show="isOpen" @click.away="isOpen = false" x-transition.opacity class="absolute top-full left-0 right-0 bg-white border-b border-slate-200 shadow-xl md:hidden">
+          <div class="px-4 py-4 space-y-3 flex flex-col">
+            <a href="./publication.html" class="text-slate-600 font-medium">Publications</a>
+            <a href="./talks.html" class="text-slate-600 font-medium">Talks</a>
+            <a href="./Teachings.html" class="text-slate-600 font-medium">Teaching</a>
+            <a href="./portfolio.html" class="text-slate-600 font-medium">Portfolio</a>
+            <a href="./blog-post.html" class="font-semibold text-indigo-600">Blog Posts</a>
           </div>
         </div>
       </div>
     </nav>
 
-<header class="bg-blue-950 shadow-sm">
-  <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-    <a href="./index.html" class="text-3xl font-bold tracking-tight text-white" style="font-family: 'Monomakh', serif; font-weight: 400; font-style: normal;">
-      YUSUF OLATUNJI TIJANI
-    </a>
-  </div>
-</header>
-
-    <h2 class="text-3xl text-center mt-9 font-bold text-blue-950">Blog Posts</h2>
-
-      <div class="bg-white rounded-lg m-4 shadow-md p-6">
-        <a
-          href="https://maths.mandela.ac.za/Study-with-us/Postgraduate"
-          class="text-blue-700 underline font-bold"
-        >
-          Nelson Mandela University: My Testimony
-        </a>
-        <p class="text-gray-400 text-right leading-relaxed">2024</p>
-        <p class="text-gray-800 italic leading-relaxed">
-          I had a profoundly impactful experience pursuing my PhD in Applied Mathematics at Nelson Mandela University (NMU). 
-          The opportunity to serve as a teaching assistant alongside exceptional lecturers and working in a supportive environment made my learning journey truly rewarding.
+    <!-- Page Header -->
+    <header class="bg-slate-900 py-16 text-center border-b-4 border-indigo-500">
+      <div class="mx-auto max-w-4xl px-4">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-4">
+          Blog & News
+        </h1>
+        <p class="text-slate-300 text-lg max-w-2xl mx-auto">
+          Latest updates, personal reflections, media features, and funding acknowledgments.
         </p>
-        </a>
       </div>
+    </header>
 
-    <div class="bg-white rounded-lg m-4 shadow-md p-6">
-        <a
-          href="https://x.com/AppliedmathMDPI/status/1821829296140259630"
-          class="text-blue-700 underline font-bold"
-        >
-          AppliedMath (MDPI): Manuscript Alert
-        </a>
-        <p class="text-gray-400 text-right leading-relaxed">2024</p>
-        <p class="text-gray-800 italic leading-relaxed">
-          📚#mathematics #appliedmathematics 
-           New Paper “Chebyshev Pseudospectral Method for #Fractional #Differential #Equations in Non-Overlapping Partitioned Domains” is available at ✏️https://mdpi.com/2673-9909/4/3/51
-           @Rhodes_Uni, @Univenofficial, @WitsUniversity
-        </p>
-        </a>
-      </div>
+    <!-- Main Content Container -->
+    <main class="max-w-4xl mx-auto px-4 py-16 space-y-16">
+      
+      <!-- ==========================================
+           SECTION 1: BLOG POSTS & UPDATES
+           ========================================== -->
+      <section class="space-y-6">
+        
+        <!-- Post 1: NMU Testimony -->
+        <article class="bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl transition-shadow duration-300 overflow-hidden relative">
+            <div class="absolute top-0 left-0 w-1 h-full bg-indigo-500"></div>
+            <div class="p-6 md:p-8">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="inline-flex items-center gap-1.5 bg-indigo-50 text-indigo-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                        <i class="fas fa-graduation-cap"></i> Personal Reflection
+                    </span>
+                    <span class="text-slate-400 font-medium text-sm">2024</span>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-3">
+                    Nelson Mandela University: My Testimony
+                </h3>
+                <p class="text-slate-600 leading-relaxed mb-6 text-lg font-light">
+                    "I had a profoundly impactful experience pursuing my PhD in Applied Mathematics at Nelson Mandela University (NMU). The opportunity to serve as a teaching assistant alongside exceptional lecturers and working in a supportive environment made my learning journey truly rewarding."
+                </p>
+                <a href="https://maths.mandela.ac.za/Study-with-us/Postgraduate" target="_blank" class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 hover:text-indigo-800 transition-colors">
+                    Read the Full Feature <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </article>
 
+        <!-- Post 2: MDPI Twitter Alert -->
+        <article class="bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl transition-shadow duration-300 overflow-hidden relative">
+            <div class="absolute top-0 left-0 w-1 h-full bg-[#1DA1F2]"></div>
+            <div class="p-6 md:p-8">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="inline-flex items-center gap-1.5 bg-blue-50 text-[#1DA1F2] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                        <i class="fab fa-twitter"></i> Social Media Alert
+                    </span>
+                    <span class="text-slate-400 font-medium text-sm">2024</span>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-3">
+                    AppliedMath (MDPI): Manuscript Alert
+                </h3>
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 mb-6">
+                    <p class="text-slate-700 leading-relaxed">
+                        📚 #mathematics #appliedmathematics <br><br>
+                        New Paper “Chebyshev Pseudospectral Method for #Fractional #Differential #Equations in Non-Overlapping Partitioned Domains” is available at <br>
+                        ✏️ <a href="https://mdpi.com/2673-9909/4/3/51" class="text-indigo-600 hover:underline">mdpi.com/2673-9909/4/3/51</a><br><br>
+                        @Rhodes_Uni, @Univenofficial, @WitsUniversity
+                    </p>
+                </div>
+                <a href="https://x.com/AppliedmathMDPI/status/1821829296140259630" target="_blank" class="inline-flex items-center gap-2 text-sm font-semibold text-[#1DA1F2] hover:text-blue-600 transition-colors">
+                    View on X (Twitter) <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+        </article>
 
-   <div class="bg-white rounded-lg m-4 shadow-md p-6">
-        <a
-          href="https://www.nrf.ac.za/the-nrfs-contribution-to-the-global-covid-19-challenge/#:~:text=The%20Fund%20aims%20to%20support,and%20attract%20new%20collaborations%20from"
-          class="text-blue-700 underline font-bold"
-        >
-          The NRF's Contribution to the Global Covid-19 Challenge
-        </a>
-        <p class="text-gray-400 text-right leading-relaxed">2021</p>
-        <p class="text-gray-800 italic leading-relaxed">
-          Prof Rao Appadu (Department of Mathematics and Applied Mathematics, Nelson Mandela University) and collaborating researchers (Dr Abey Kelil and PhD student, Mr Yusuf Tijani) are looking into using polynomial interpolation to predict COVID-19 propagation. In this work, the team makes use of four mathematical interpolation methods (three variations of Lagrangian interpolation, and Spline interpolation) to construct polynomials to capture the data for COVID-19 disease propagation. 
-          The team is looking at data on the total number of people infected and the number of active cases. This study looks at data from: Italy, Germany, South Korea, India, South Africa and Mauritius.
-        </p>
-        <!-- <a
-          href="https://link.springer.com/article/10.1007/s00396-025-05384-w"
-          class="flex justify-end mb-0 pb-0"
-        >
-          <button
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          >
-            Download
-          </button> -->
-        </a>
-      </div>
+        <!-- Post 3: NRF Covid-19 Article -->
+        <article class="bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl transition-shadow duration-300 overflow-hidden relative">
+            <div class="absolute top-0 left-0 w-1 h-full bg-emerald-500"></div>
+            <div class="p-6 md:p-8">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                        <i class="far fa-newspaper"></i> Media Feature
+                    </span>
+                    <span class="text-slate-400 font-medium text-sm">2021</span>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-3">
+                    The NRF's Contribution to the Global Covid-19 Challenge
+                </h3>
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    Prof Rao Appadu (Department of Mathematics and Applied Mathematics, Nelson Mandela University) and collaborating researchers (Dr Abey Kelil and PhD student, Mr Yusuf Tijani) are looking into using polynomial interpolation to predict COVID-19 propagation. In this work, the team makes use of four mathematical interpolation methods (three variations of Lagrangian interpolation, and Spline interpolation) to construct polynomials to capture the data for COVID-19 disease propagation. 
+                    <br><br>
+                    The team is looking at data on the total number of people infected and the number of active cases. This study looks at data from: Italy, Germany, South Korea, India, South Africa and Mauritius.
+                </p>
+                <a href="https://www.nrf.ac.za/the-nrfs-contribution-to-the-global-covid-19-challenge/#:~:text=The%20Fund%20aims%20to%20support,and%20attract%20new%20collaborations%20from" target="_blank" class="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-800 transition-colors">
+                    Read the NRF Press Release <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </article>
 
-      <!-- Add the "Update" section here -->
-   <div class="bg-white rounded-lg m-4 shadow-md p-6">
-    <p class="font-bold text-gray-800">Funding Institutions:</p>
-    <ul class="list-disc list-inside text-gray-800">
-      <li>
-        <a href="https://www.dfat.gov.au/people-to-people/australia-awards/australia-awards-scholarships" class="text-blue-700 underline">
-          Australia Awards Scholarships
-        </a>
-      </li>
-       <li>
-        <a href="https://www.cimpa.info/" class="text-blue-700 underline">
-          CIMPA: Centre International de Mathématiques Pures et Appliquées
-        </a>
-      </li>
-      <li>
-        <a href="https://www.nrf.ac.za/" class="text-blue-700 underline">
-          National Research Foundation: South Africa
-        </a>
-      </li>
-      <li>
-        <a href="https://www.pims.math.ca/" class="text-blue-700 underline">
-          Pacific Institute for the Mathematical Sciences
-        </a>
-      </li>
-      <li>
-        <a href="https://www.simonsfoundation.org/" class="text-blue-700 underline">
-          Simons Foundation
-        </a>
-      </li>
-       <li>
-        <a href="https://turkiyeburslari.gov.tr/" class="text-blue-700 underline">
-          Turkiye Scholarships
-        </a>
-      </li>
-    </ul>
-    </div>
-   </div>
+      </section>
 
-    <footer class="bg-green-100 shadow-sm py-4 text-center">
-      <div class="container mx-auto">
-        <p class="text-xl font-bold text-gray-600 mb-2">Sitemap</p>
-        <div class="flex justify-evenly bm-2">
-          <p class="text-sm font-bold text-gray-600 mr-4">FOLLOW:</p>
-          <a
-            href="https://x.com/olodyusuf"
-            class="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded"
-          >
-            <i class="fab fa-twitter text-blue-400 text-lg"></i>
-            <span class="text-gray-700">Twitter</span>
+      <!-- ==========================================
+           SECTION 2: FUNDING INSTITUTIONS
+           ========================================== -->
+      <section>
+        <div class="flex items-center gap-4 mb-8 border-b pb-4 border-slate-200">
+            <div class="bg-amber-100 text-amber-600 p-3 rounded-xl">
+                <i class="fas fa-award text-2xl"></i>
+            </div>
+            <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Funding & Affiliations</h2>
+        </div>
+        
+        <p class="text-slate-600 mb-6">I am deeply grateful for the financial support and research grants provided by the following esteemed institutions:</p>
+
+        <!-- Modern Links Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            
+            <a href="https://www.dfat.gov.au/people-to-people/australia-awards/australia-awards-scholarships" target="_blank" class="group flex items-center p-4 bg-white border border-slate-200 rounded-xl hover:border-indigo-400 hover:shadow-md transition-all">
+                <div class="bg-slate-100 text-slate-500 w-10 h-10 rounded-full flex items-center justify-center shrink-0 group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors">
+                    <i class="fas fa-globe-asia"></i>
+                </div>
+                <div class="ml-4 flex-grow">
+                    <span class="block font-semibold text-slate-800 group-hover:text-indigo-600 transition-colors">Australia Awards Scholarships</span>
+                </div>
+            </a>
+
+            <a href="https://www.cimpa.info/" target="_blank" class="group flex items-center p-4 bg-white border border-slate-200 rounded-xl hover:border-indigo-400 hover:shadow-md transition-all">
+                <div class="bg-slate-100 text-slate-500 w-10 h-10 rounded-full flex items-center justify-center shrink-0 group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors">
+                    <i class="fas fa-square-root-alt"></i>
+                </div>
+                <div class="ml-4 flex-grow">
+                    <span class="block font-semibold text-slate-800 group-hover:text-indigo-600 transition-colors">CIMPA</span>
+                    <span class="block text-xs text-slate-500">Centre International de Mathématiques Pures et Appliquées</span>
+                </div>
+            </a>
+
+            <a href="https://www.nrf.ac.za/" target="_blank" class="group flex items-center p-4 bg-white border border-slate-200 rounded-xl hover:border-indigo-400 hover:shadow-md transition-all">
+                <div class="bg-slate-100 text-slate-500 w-10 h-10 rounded-full flex items-center justify-center shrink-0 group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors">
+                    <i class="fas fa-landmark"></i>
+                </div>
+                <div class="ml-4 flex-grow">
+                    <span class="block font-semibold text-slate-800 group-hover:text-indigo-600 transition-colors">National Research Foundation</span>
+                    <span class="block text-xs text-slate-500">South Africa</span>
+                </div>
+            </a>
+
+            <a href="https://www.pims.math.ca/" target="_blank" class="group flex items-center p-4 bg-white border border-slate-200 rounded-xl hover:border-indigo-400 hover:shadow-md transition-all">
+                <div class="bg-slate-100 text-slate-500 w-10 h-10 rounded-full flex items-center justify-center shrink-0 group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors">
+                    <i class="fas fa-water"></i>
+                </div>
+                <div class="ml-4 flex-grow">
+                    <span class="block font-semibold text-slate-800 group-hover:text-indigo-600 transition-colors">PIMS</span>
+                    <span class="block text-xs text-slate-500">Pacific Institute for the Mathematical Sciences</span>
+                </div>
+            </a>
+
+            <a href="https://www.simonsfoundation.org/" target="_blank" class="group flex items-center p-4 bg-white border border-slate-200 rounded-xl hover:border-indigo-400 hover:shadow-md transition-all">
+                <div class="bg-slate-100 text-slate-500 w-10 h-10 rounded-full flex items-center justify-center shrink-0 group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors">
+                    <i class="fas fa-atom"></i>
+                </div>
+                <div class="ml-4 flex-grow">
+                    <span class="block font-semibold text-slate-800 group-hover:text-indigo-600 transition-colors">Simons Foundation</span>
+                </div>
+            </a>
+
+            <a href="https://turkiyeburslari.gov.tr/" target="_blank" class="group flex items-center p-4 bg-white border border-slate-200 rounded-xl hover:border-indigo-400 hover:shadow-md transition-all">
+                <div class="bg-slate-100 text-slate-500 w-10 h-10 rounded-full flex items-center justify-center shrink-0 group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors">
+                    <i class="fas fa-star-and-crescent"></i>
+                </div>
+                <div class="ml-4 flex-grow">
+                    <span class="block font-semibold text-slate-800 group-hover:text-indigo-600 transition-colors">Türkiye Scholarships</span>
+                </div>
+            </a>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 py-10 text-center text-slate-400 mt-12 border-t border-slate-800">
+      <div class="container mx-auto px-4 max-w-4xl flex flex-col items-center">
+        
+        <div class="flex items-center gap-6 mb-8">
+          <a href="https://x.com/olodyusuf" target="_blank" class="hover:text-white transition-colors transform hover:scale-110">
+            <i class="fab fa-twitter text-2xl"></i>
           </a>
-          <a
-            href="#"
-            class="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded"
-          >
-            <i class="fab fa-github text-gray-800 text-lg"></i>
-            <span class="text-gray-700">GitHub</span>
+          <a href="#" target="_blank" class="hover:text-white transition-colors transform hover:scale-110">
+            <i class="fab fa-github text-2xl"></i>
           </a>
-          <a
-            href="https://www.linkedin.com/in/yusuf-olatunji-tijani-5489b324"
-            class="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded"
-          >
-            <i class="fab fa-linkedin-in text-blue-700 text-lg"></i>
-            <span class="text-gray-700">LinkedIn</span>
+          <a href="https://www.linkedin.com/in/yusuf-olatunji-tijani-5489b324" target="_blank" class="hover:text-white transition-colors transform hover:scale-110">
+            <i class="fab fa-linkedin-in text-2xl"></i>
+          </a>
+          <a href="https://scholar.google.com/citations?user=ZD7XicUAAAAJ&hl=en" target="_blank" class="hover:text-white transition-colors transform hover:scale-110">
+            <i class="fas fa-graduation-cap text-2xl"></i>
           </a>
         </div>
-        <p class="text-xs text-gray-600">
-          &copy; 2025 Yusuf Olatunji Tijani. All right reserved
+        
+        <p class="text-sm">
+          &copy; <span id="currentYear"></span> Yusuf Olatunji Tijani. All rights reserved.
         </p>
       </div>
     </footer>
+    
+    <!-- Script to set the dynamic year automatically -->
+    <script>
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
